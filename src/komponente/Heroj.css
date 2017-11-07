@@ -18,12 +18,18 @@
 
 .Heroj_Profil{
 	text-align: left;
-	float: right;
-	width: 80%;
+	float: left;
+	width: 100%;
 	cursor: pointer;
 	color: #f6f1ed;
 	margin-top: 2px;
 }
+  .selected{
+    background-color: green;
+  
+
+
+  }
 
 @media screen and (min-width: 320px) and (max-width: 360px ){
 	.Heroj{
@@ -46,4 +52,10 @@
 		width: 70%;
 		/*padding-top: 40px;*/
 	}
+}
+button{
+	background-color: #16174f;
+	border-color: #16174f;
+	color: white;
+	margin-left: 10px;
 }

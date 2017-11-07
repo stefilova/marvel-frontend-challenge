@@ -11,8 +11,9 @@ const Footer = ({title}) => (<footer>{title}</footer>);
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { heroes: [], offset: 0 };
+    this.state = { heroes: [], offset: 0, selected:[] };
     this.searchCharacters = this.debounce(this.searchCharacters.bind(this), 200);
+
   }
   
   componentDidMount() {
@@ -45,10 +46,14 @@ class App extends Component {
   }
 
 
+
+
   render() {
+     
      const {footer} = this.props;
     return (
       <div className="App">
+     
        <div className="Naslov">{naslov}</div>
        <div>
         <Search onChange={this.searchCharacters.bind(this)} />
@@ -58,6 +63,7 @@ class App extends Component {
           </div>
         </div>
         <Lista heroes={this.state.heroes} />
+      
         <Footer title={footer}/>
     
     
@@ -65,6 +71,12 @@ class App extends Component {
       
     );
   }
+  handleSelection(index) {
+    this.setState({
+      selected: this.state.heroes
+    });
+  }
+
 }
 
 export default App;

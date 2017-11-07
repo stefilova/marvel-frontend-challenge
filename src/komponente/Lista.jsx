@@ -2,8 +2,11 @@ import React, {Component} from 'react';
 import Heroj from "./Heroj";
 
 class Lista extends Component{
-
+	
+	
 	render(){
+		
+	
 		return(
 				<div>
 					{

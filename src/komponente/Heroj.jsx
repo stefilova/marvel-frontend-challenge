@@ -1,6 +1,16 @@
 import React, {Component} from 'react';
 import "./Heroj.css";
 class Heroj extends Component{
+	constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+    this.state = {
+        selected: false,
+        
+    };
+
+  }
+
 	render(){
 
 		const Ikonica_Style = {
@@ -15,19 +25,40 @@ class Heroj extends Component{
 			marginLeft: "5px",
 
 		}
+		
+
 		return(
-				<div className="Heroj animated flipInX">
+				<div className={`Heroj ${this.state.selected ? "selected" : ""}`}>
+				<div className=" animated flipInX">
 					<div className="Heroj_Ikonica" style={Ikonica_Style}></div>
 					
 					<div className="Heroj_Profil">{this.props.name}
-					<br/><br/>
+					<button onClick={this.handleClick}>+</button>
+					
 
 					</div>
 				</div>
-
+				</div>
 			);
 	}
+	handleClick() {
+    if(this.props.onSelect) { 
+        this.props.onSelect(this.props.key);
+    }
+    this.setState({
+        selected: !this.state.selected
+    });
+    const info = {
+    	ime : this.props.name,
+    	slika : this.props.thumbnail
+    }
+    localStorage.setItem('foo', JSON.stringify({info})); 
+    var niz = JSON.parse(localStorage.getItem('foo'));
+    
+    
+    console.log(niz);
 
+  }
 
 }
 
