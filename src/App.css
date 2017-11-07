@@ -1,0 +1,45 @@
+.App {
+  text-align: center;
+}
+
+.App__SearchPagination {
+  font-size: 20px;
+  font-weight: 200;
+  display: inline-block;
+  position: absolute;
+  text-align: left;
+  margin-left: 10px;
+  color:  #e12222;
+}
+
+.App__PagButton {
+  cursor: pointer;
+}
+
+.App__PagButton:hover {
+  cursor: pointer;
+  font-weight: 400;
+}
+
+.Naslov {
+  font-size: 60px;
+  font-weight: 100;
+  color: #e12222;
+  margin-bottom: 20px;
+  font-family: 'Helvetica Neue';
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 0.2rem;
+  background-color: #efefef;
+  text-align: center;
+  color:  #e12222;
+  }
